@@ -1,6 +1,7 @@
 {
   "name": "saran-shabu-|-interactive-portfolio",
   "private": true,
+  "homepage": "https://TwsitedWizard.github.io/saranshabu",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,12 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/genai": "^1.10.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "@google/genai": "^1.10.0"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "gh-pages": "^6.3.0",
     "typescript": "~5.7.2",
     "vite": "^6.2.0"
   }
