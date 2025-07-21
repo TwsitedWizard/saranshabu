@@ -2,6 +2,8 @@
 import React from 'react';
 import type { ContactInfo, Experience, Project, Certificate, SkillCategory, Education, Language } from './types';
 
+const REPO_NAME = '/saranshabu'; // Replace with your repository name
+
 export const RESUME_DATA_STR = `
 Saran Shabu
 Kozhikode, Kerala 673106
@@ -129,9 +131,9 @@ export const PROJECTS: Project[] = [
         description: "Developed a full-stack MERN application for managing event proposals and bookings, featuring a user-friendly interface for seamless client-company interaction.",
         repoLink: "https://github.com/TwsitedWizard/Event-Planner---Manager",
         screenshots: [
-            "public/evm/dash.png",
-            "public/evm/map.png",
-            "public/evm/fam.png"
+            `${REPO_NAME}public/evm/dash.png`,
+            `${REPO_NAME}public/evm/map.png`,
+            `${REPO_NAME}public/evm/fam.png`
         ],
         insights: {
             role: "Full-Stack Developer",
@@ -145,9 +147,9 @@ export const PROJECTS: Project[] = [
         period: "Oct 2023 – Mar 2024",
         description: "Engineered a deep learning model for tree age prediction from ring analysis. This research, involving advanced image processing, was published and presented at I-SMAC 2024.",
         screenshots: [
-            "public/tree/rings.png",
-            "public/tree/tree.png",
-            "public/tree/arch.png"
+            `${REPO_NAME}public/tree/rings.png`,
+            `${REPO_NAME}public/tree/tree.png`,
+            `${REPO_NAME}public/tree/arch.png`
         ],
         insights: {
             role: "Lead Researcher & ML Engineer",
@@ -162,9 +164,9 @@ export const PROJECTS: Project[] = [
         description: "Designed and built a full-stack e-commerce platform for vehicle purchases, focusing on a robust user experience with PHP and MySQL for backend functionality.",
         repoLink: "https://github.com/TwsitedWizard/Legendary-Automotive",
         screenshots: [
-            "public/auto/home.png",
-            "public/auto/bullet.png",
-            "public/auto/payment.png"
+            `${REPO_NAME}public/auto/home.png`,
+            `${REPO_NAME}public/auto/bullet.png`,
+            `${REPO_NAME}public/auto/payment.png`
         ],
         insights: {
             role: "Full-Stack Developer",
@@ -178,9 +180,9 @@ export const PROJECTS: Project[] = [
         period: "Oct 2023 – Nov 2023",
         description: "Created an online portal for booking car wash services, featuring full-stack capabilities and integrated email notifications for service confirmations using PHPMailer.",
         screenshots: [
-            "public/wash/home.png",
-            "public/wash/form.png",
-            "public/wash/about.png"
+            `${REPO_NAME}public/wash/home.png`,
+            `${REPO_NAME}public/wash/form.png`,
+            `${REPO_NAME}public/wash/about.png`
         ],
         insights: {
             role: "Full-Stack Developer",
@@ -194,9 +196,9 @@ export const PROJECTS: Project[] = [
         period: "Feb 2024 – Mar 2024",
         description: "Developed a C# WinForms desktop application for football club and player management, highlighting skills in database handling and object-oriented programming.",
         screenshots: [
-            "public/ball/main.png",
-            "public/ball/lineup.png",
-            "public/ball/manager.png"
+            `${REPO_NAME}public/ball/main.png`,
+            `${REPO_NAME}public/ball/lineup.png`,
+            `${REPO_NAME}public/ball/manager.png`
         ],
         insights: {
             role: "Desktop App Developer",
@@ -210,7 +212,7 @@ export const PROJECTS: Project[] = [
         period: "Oct 2023 – Nov 2023",
         description: "Built a secure Android application for basic banking operations using Java and SQLite, focusing on user authentication and transaction handling to demonstrate mobile development proficiency.",
         screenshots: [
-            "public/bank/main.png",
+            `${REPO_NAME}public/bank/main.png`,
         ],
         insights: {
             role: "Mobile App Developer",
@@ -224,9 +226,9 @@ export const PROJECTS: Project[] = [
         period: "Mar 2023 – May 2023",
         description: "Developed a Java-based system to facilitate road trip planning and registration, focusing on robust backend logic and a clear frontend presentation using JSP.",
         screenshots: [
-            "public/road/home.png",
-            "public/road/trips.png",
-            "public/road/gallery.png"
+            `${REPO_NAME}public/road/home.png`,
+            `${REPO_NAME}public/road/trips.png`,
+            `${REPO_NAME}public/road/gallery.png`
         ],
         insights: {
             role: "Java Web Developer",
@@ -240,9 +242,9 @@ export const PROJECTS: Project[] = [
         period: "Feb 2025 – Apr 2023",
         description: "Created a full-stack website for freelancers to market and sell their skills, enabling backend connectivity with a focus on user experience and e-commerce functionality.",
         screenshots: [
-            "public/gig/prod.png",
-            "public/gig/list.png",
-            "public/gig/chat.png"
+            `${REPO_NAME}public/gig/prod.png`,
+            `${REPO_NAME}public/gig/list.png`,
+            `${REPO_NAME}public/gig/chat.png`
         ],
         insights: {
             role: "Full-Stack Developer",

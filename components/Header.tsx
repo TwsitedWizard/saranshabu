@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
     <header className="py-8 md:py-12 flex flex-col md:flex-row items-center justify-between mb-12">
       <div className="flex items-center mb-6 md:mb-0">
         <img
-          src="public/prof.jpg"
+          src="/saranshabu/public/prof.jpg"
           alt="Saran Shabu"
           className="w-25 h-24 md:w-34 md:h-32 rounded-full mr-6 border-4 border-slate-200 dark:border-slate-700 shadow-lg"
         />
