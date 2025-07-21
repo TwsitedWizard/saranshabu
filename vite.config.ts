@@ -14,4 +14,6 @@ export default defineConfig(({ mode }) => {
         }
       }
     };
+    base: '/saranshabu/', // Replace with your repository name
+  plugins: [react()],
 });
