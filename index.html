@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-ax" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saran Shabu | Interactive Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+      :root {
+        /* Light Theme Gradient */
+        --gradient-color-1: #e0eafc;
+        --gradient-color-2: #cfdef3;
+      }
+      .dark {
+        /* Dark Theme Gradient */
+        --gradient-color-1: #0f2027;
+        --gradient-color-2: #203a43;
+      }
+
+      html {
+        min-height: 100%;
+        background: linear-gradient(135deg, var(--gradient-color-1), var(--gradient-color-2));
+        transition: background 0.5s ease-in-out;
+      }
+      
+      body, #root {
+        min-height: 100%;
+      }
+      
+      /* Centering & Layout */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 2rem 1rem;
+        overflow-y: auto;
+      }
+
+      /* Custom Swiper Styles */
+      .project-carousel {
+        position: relative;
+      }
+      .project-carousel .swiper-button-next,
+      .project-carousel .swiper-button-prev {
+        color: #e2e8f0; /* slate-200 */
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); /* Added for contrast */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        --swiper-navigation-size: 28px;
+      }
+      .project-carousel:hover .swiper-button-next,
+      .project-carousel:hover .swiper-button-prev {
+        opacity: 0.8;
+      }
+      .project-carousel .swiper-button-next:hover,
+      .project-carousel .swiper-button-prev:hover {
+        opacity: 1;
+      }
+      .project-carousel .swiper-pagination-bullet {
+        background-color: #94a3b8; /* slate-400 */
+      }
+      .project-carousel .swiper-pagination-bullet-active {
+        background-color: #3b82f6 !important; /* blue-500 */
+      }
+      
+      /* ============================================= */
+      /* LIGHT THEME OVERRIDE STYLES          */
+      /* ============================================= */
+      .light-theme {
+        color: #2d3748;
+      }
+      .light-theme .main-content-container {
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .light-theme .project-list-item {
+        color: #2d3748;
+      }
+      .light-theme .project-list-item.is-active {
+        background-color: #e2e8f0;
+        color: #1a202c;
+      }
+      .light-theme .project-details-container h1,
+      .light-theme .project-details-container h2,
+      .light-theme .project-details-container h3,
+      .light-theme .project-details-container p {
+        color: #2d3748;
+      }
+      .light-theme .project-details-container .project-insights p,
+      .light-theme .project-details-container .project-insights li,
+      .light-theme .project-details-container .project-insights strong {
+        color: #4a5568;
+      }
+      .light-theme .carousel-container {
+        background-color: #f7fafc;
+        border: 1px solid #e2e8f0;
+      }
+      .light-theme .carousel-container .swiper-button-next,
+      .light-theme .carousel-container .swiper-button-prev {
+        color: #1a202c;
+        text-shadow: none;
+      }
+      .light-theme .carousel-container .swiper-pagination-bullet {
+        background-color: #cbd5e0;
+      }
+      .light-theme .carousel-container .swiper-pagination-bullet-active {
+        background-color: #4a5568 !important;
+      }
+      .light-theme .dark\:text-slate-400 {
+        color: #4a5568;
+      }
+      .light-theme footer {
+        color: #4a5568;
+      }
+    </style>
+    <script>
+      // Set theme on initial load to prevent FOUC
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.add('light-theme');
+        document.documentElement.classList.remove('dark');
+      }
+      // Tailwind config
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            boxShadow: {
+              'aero': '0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1)',
+            },
+            animation: {
+              'background-pan': 'background-pan 3s ease-in-out infinite alternate',
+              'fade-in': 'fade-in 0.8s ease-out forwards',
+              'project-fade-in': 'project-fade-in 0.4s ease-out forwards',
+            },
+            keyframes: {
+              'background-pan': {
+                '0%': { backgroundPosition: '0% 50%' },
+                '100%': { backgroundPosition: '100% 50%' },
+              },
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'project-fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(15px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+<!-- SwiperJS JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js" defer></script>
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.10.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/saranshabu/assets/index-FjQXZHUK.js"></script>
+</head>
+  <body class="">
+    <div id="root"></div>
+</body>
+</html>
