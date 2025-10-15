@@ -113,7 +113,7 @@ export const INTERNSHIPS: Experience[] = [
   {
     role: "Junior Associate Developer",
     company: "Calanjiyam Consultancies and Technologies",
-    period: "Apr 2025 – Present",
+    period: "Apr 2025 – Sept 2025",
     description: "Contributed to advancing the web development team by gaining hands-on experience in real-time backend applications using jQuery, AJAX, PHP, and MySQL."
   },
   {
